@@ -39,6 +39,7 @@ class Extender(object):
 		RemButton.setText("Remove Item")
 		RemButton.move(250, 190)
 		RemButton.clicked.connect(lambda: self.ItemRemFn())
+		
 	def ItemAddFn(self):
 		print("+++")
 		CartItems.append({"Name":self.inputBox.toPlainText().strip(), "Category":self.combos.currentText()})
