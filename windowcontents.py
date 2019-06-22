@@ -15,12 +15,7 @@ class Extender(object):
 		frame1.resize(500, 600)
 		frame1.move(0,0)
 		frame1.setStyleSheet("border-style:solid;border-color:rgb(0, 255, 131);border-width:3px;border-radius: 5px;")
-
-		frame2 = QtWidgets.QWidget(window)
-		frame2.resize(150, 600)
-		frame2.move(500,0)
-		frame2.setStyleSheet("border-style:solid;border-color:rgb(0, 255, 131);border-width:3px;border-radius: 5px;")
-
+		
 		self.combos = QtWidgets.QComboBox(window)
 		self.combos.addItems(['Beverages', 'Chips', 'Biscuits'])
 		self.combos.setStyleSheet("background-color:white; color:black")
