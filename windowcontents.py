@@ -30,14 +30,20 @@ class ShoppingWindow(object):
 		AddButton = QtWidgets.QPushButton(window)
 		AddButton.setStyleSheet("background-color:white")
 		AddButton.setText("Add Item")
-		AddButton.move(120, 190)
+		AddButton.move(135, 190)
 		AddButton.clicked.connect(lambda: self.ItemAddFn())
 
 		RemButton = QtWidgets.QPushButton(window)
 		RemButton.setStyleSheet("background-color:white")
 		RemButton.setText("Remove Item")
-		RemButton.move(250, 190)
+		RemButton.move(265, 190)
 		RemButton.clicked.connect(lambda: self.ItemRemFn())
+
+		RemAllButton = QtWidgets.QPushButton(window)
+		RemAllButton.setStyleSheet("background-color:white")
+		RemAllButton.setText("Remove All")
+		RemAllButton.move(200, 235)
+		RemAllButton.clicked.connect(lambda: self.AreYouSure())
 		
 	def ItemAddFn(self):
 		print("+++")
