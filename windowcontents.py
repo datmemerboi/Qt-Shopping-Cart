@@ -45,14 +45,31 @@ class ShoppingWindow(object):
 		RemAllButton.move(200, 235)
 		RemAllButton.clicked.connect(lambda: self.AreYouSure())
 		
+		self.resultBox = QtWidgets.QTextEdit(frame1)
+		self.resultBox.setStyleSheet("color:black; font-size: 16px;")
+		self.resultBox.resize(300, 200)
+		self.resultBox.move(100, 280)
+
 	def ItemAddFn(self):
-		print("+++")
-		CartItems.append({"Name":self.inputBox.toPlainText().strip(), "Category":self.combos.currentText()})
-		print(CartItems)
+		CartItem = {"Name":self.inputBox.toPlainText().strip(), "Category":self.combos.currentText()}
+		dbconn = MongoClient("mongodb://localhost:27017/")	# Default Mongo port connection
+		query = dbconn.ShopListApp.ShopCart.update( CartItem, CartItem, upsert= True)	#DB:ShoplistApp, Collection:ShopCart
+		self.ResultBoxPrintFn(dbconn)
+		dbconn.close()
 
 	def ItemRemFn(self):
-		print("---")
-		for index, val in enumerate(CartItems):
-			if(val["Name"]==self.inputBox.toPlainText().strip() and val["Category"]==self.combos.currentText()):
-				del CartItems[index]
-		print(CartItems)
+		CartItem = {"Name":self.inputBox.toPlainText().strip(), "Category":self.combos.currentText()}		
+		dbconn = MongoClient("mongodb://localhost:27017/")	# Default Mongo port connection
+		query = dbconn.ShopListApp.ShopCart.remove(CartItem)	#DB:ShoplistApp, Collection:ShopCart
+		self.ResultBoxPrintFn(dbconn)
+		dbconn.close()
+
+	def ResultBoxPrintFn(self,dbconn):
+		self.resultBox.setText(" ")
+		result = dbconn.ShopListApp.ShopCart.find()
+		for index in result:
+			if self.resultBox.toPlainText().strip() == "":
+				self.resultBox.setText(index['Name']+" "+index['Category'])
+			else:
+				self.resultBox.setText(self.resultBox.toPlainText().strip()+"\n"+index['Name']+" "+index['Category'])
+		print("Result Printed")
