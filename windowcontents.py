@@ -73,3 +73,18 @@ class ShoppingWindow(object):
 			else:
 				self.resultBox.setText(self.resultBox.toPlainText().strip()+"\n"+index['Name']+" "+index['Category'])
 		print("Result Printed")
+
+	def AreYouSure(self):
+		check = QtWidgets.QMessageBox()
+		check.setText("Are you sure?")
+		check.setInformativeText("Your cart will be cleared..")
+		check.setWindowTitle(" ")
+		check.setStandardButtons(QtWidgets.QMessageBox.No | QtWidgets.QMessageBox.Yes)
+		check.buttonClicked.connect(lambda: self.RemAllFn())
+		check.exec_()
+
+	def RemAllFn(self):
+		dbconn = MongoClient("mongodb://localhost:27017/")
+		query = dbconn.ShopListApp.ShopCart.remove({})
+		self.ResultBoxPrintFn(dbconn)
+		dbconn.close()
