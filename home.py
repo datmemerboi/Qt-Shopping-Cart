@@ -6,6 +6,6 @@ if __name__ == '__main__':
 	app = QtWidgets.QApplication(sys.argv)
 	ThisWindow = QtWidgets.QMainWindow()
 	uiwindow.UIWindowClass().UIWindowFn(ThisWindow)
-	windowcontents.Extender().ExtenderFn(ThisWindow)
+	windowcontents.ShoppingWindow().ShoppingWindowFn(ThisWindow)
 	ThisWindow.show()
 	sys.exit(app.exec_())

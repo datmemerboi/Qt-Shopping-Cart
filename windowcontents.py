@@ -1,10 +1,9 @@
 from PyQt5 import QtWidgets
+from pymongo import MongoClient
 
-CartItems = []
-
-class Extender(object):
-	def ExtenderFn(self, window):
-		window.setWindowTitle("Extended Window")
+class ShoppingWindow(object):
+	def ShoppingWindowFn(self, window):
+		window.setWindowTitle("Shopping Window")
 		
 		welcomeMsg = QtWidgets.QMessageBox()
 		welcomeMsg.setText("Welcome to your shopping cart!")
@@ -20,13 +19,13 @@ class Extender(object):
 		self.combos.addItems(['Beverages', 'Chips', 'Biscuits'])
 		self.combos.setStyleSheet("background-color:white; color:black")
 		self.combos.resize(300, 35)
-		self.combos.move(80, 50)
+		self.combos.move(100, 50)
 
 		self.inputBox = QtWidgets.QTextEdit(window)
 		self.inputBox.setStyleSheet("background-color:white; color:black")
 		self.inputBox.setPlaceholderText("Enter Name here")
 		self.inputBox.resize(300, 30)
-		self.inputBox.move(80, 120)
+		self.inputBox.move(100, 120)
 
 		AddButton = QtWidgets.QPushButton(window)
 		AddButton.setStyleSheet("background-color:white")
