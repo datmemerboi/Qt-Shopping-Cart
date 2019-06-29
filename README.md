@@ -4,16 +4,20 @@
 A shopping cart application created with **Python** and **PyQt**.
 
 Basic Commit:
->Basic Working Structure with **Add** and **Remove** items.
+> Basic Working Structure with **Add** and **Remove** items
+
+> LIST structure implementation
 
 Second Commit:
->Removing LIST implemented before
+> Removing LIST implemented before
 
->MongoDB storage & retrieval
+> MongoDB manipulation & retrieval
+
+> Working Screenshots
 
 To be added:
->Multi Input
+> _Multi Input_
 
->Dark Mode
+> _Dark Mode_
 
->Switching b/w Modes
+> _Switching b/w Modes_
