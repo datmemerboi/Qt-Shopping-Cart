@@ -55,6 +55,19 @@ class ShoppingWindow(object):
 		self.resultBox.resize(300, 200)
 		self.resultBox.move(100, 280)
 
+		self.SearchBar = QtWidgets.QLineEdit(window)
+		self.SearchBar.move(510, 20)
+		self.SearchBar.resize(130, 30)
+		self.SearchBar.setStyleSheet("background-color:white;")
+		self.SearchBar.setPlaceholderText("Search Item")
+
+		SearchButton = QtWidgets.QPushButton(window)
+		SearchButton.setStyleSheet("background-color:ghostwhite;")
+		SearchButton.move(550, 70)
+		SearchButton.resize(35, 30)
+		SearchButton.setText("Go")
+		SearchButton.clicked.connect(lambda: self.SearchItems())
+
 	def ItemAddFn(self):
 		CartItem = {"Name":self.inputBox.text().strip(), "Category":self.combos.currentText()}
 		dbconn = MongoClient("mongodb://localhost:27017/")
@@ -93,3 +106,12 @@ class ShoppingWindow(object):
 		query = dbconn.ShopCartApp.Cart.remove({})
 		self.ResultBoxPrintFn(dbconn)
 		dbconn.close()
+
+	def SearchItems(self):
+		query = self.SearchBar.text()
+		print("Searching for: "+ query)
+		dbconn = MongoClient("mongodb://localhost:27017/")
+		result = dbconn.ShopCartApp.Stonks.find( {"Name":{'$regex' : query, '$options' : 'i'}} )
+		if(result):
+			for index in result:
+				print(index["Name"]+" found in "+index["Category"])
