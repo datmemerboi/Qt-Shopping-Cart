@@ -23,16 +23,12 @@ class ShoppingWindow(object):
 		self.combos = QtWidgets.QComboBox(window)
 		self.combos.addItems(['Beverages', 'Chips', 'Biscuits'])
 		self.combos.setStyleSheet("background-color:white; color:black")
-		# self.combos.resize(300, 35)
-		# self.combos.move(80, 50)
 		self.combos.resize(300, 35)
 		self.combos.move(100, 50)
 
 		self.inputBox = QtWidgets.QLineEdit(window)
 		self.inputBox.setStyleSheet("background-color:white; color:black")
 		self.inputBox.setPlaceholderText("Enter Name here")
-		# self.inputBox.resize(300, 30)
-		# self.inputBox.move(80, 120)
 		self.inputBox.resize(300, 30)
 		self.inputBox.move(100, 120)
 
