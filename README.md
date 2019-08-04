@@ -25,6 +25,8 @@ Third Commit:
 > Search Stocks
 
 To be added:
+> _Stock Search Result Bar_
+
 > _Multi Input_
 
 > _Switching b/w Modes_
