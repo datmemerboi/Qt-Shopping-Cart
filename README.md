@@ -1,7 +1,9 @@
-# Qt-Shopping-Cart
-## A Shopping Cart Application
+# Qt Shopping Cart
+## A Shopping Cart Desktop App
+### Using Python, PyQt5, MongoDB and PyMongo
+A shopping cart application created with **PyQt** and **MongoDB**.
 
-A shopping cart application created with **Python** and **PyQt**.
+Connection to the MongoDB must be mentioned.
 
 Basic Commit:
 > Basic Working Structure with **Add** and **Remove** items
@@ -15,9 +17,18 @@ Second Commit:
 
 > Working Screenshots
 
+Third Commit:
+> Dark Mode
+
+> Search Bar
+
+> Search Stocks
+
 To be added:
 > _Multi Input_
 
-> _Dark Mode_
-
 > _Switching b/w Modes_
+
+> _Proceed to checkout_
+
+> _Previous orders_
