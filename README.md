@@ -24,6 +24,9 @@ Third Commit:
 
 > Search Stocks
 
+Fourth Commit:
+> App Icon added
+
 To be added:
 > _Stock Search Result Bar_
 
