@@ -5,27 +5,26 @@ A shopping cart application created with **PyQt** and **MongoDB**.
 
 Connection to the MongoDB must be mentioned.
 
-Basic Commit:
-> Basic Working Structure with **Add** and **Remove** items
+**Basic Commit**
+> - Basic Working Structure with **Add** and **Remove** items
+> - LIST structure implementation
 
-> LIST structure implementation
+**Second Commit**
+> - Removing LIST implemented before
+> - MongoDB manipulation & retrieval
+> - Working Screenshots
 
-Second Commit:
-> Removing LIST implemented before
+**Third Commit**
+> - Dark Mode
+> - Search Bar
+> - Search Stocks
 
-> MongoDB manipulation & retrieval
+**Fourth Commit**
+> - App Icon added
 
-> Working Screenshots
-
-Third Commit:
-> Dark Mode
-
-> Search Bar
-
-> Search Stocks
-
-Fourth Commit:
-> App Icon added
+**Fifth Commit**
+> - Edit window resize
+> - Separate CSS files
 
 To be added:
 > _Stock Search Result Bar_
